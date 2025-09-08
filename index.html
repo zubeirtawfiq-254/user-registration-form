@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration Form</title>
+</head>
+<body>
+  <h1>User Registration Form</h1>
+
+  <form action="#" method="post">
+    <!-- Personal Information -->
+    <fieldset>
+      <legend>Personal Information</legend>
+
+      <label for="first-name">First Name:</label>
+      <input type="text" id="first-name" name="first-name" required><br><br>
+
+      <label for="last-name">Last Name:</label>
+      <input type="text" id="last-name" name="last-name" required><br><br>
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required><br><br>
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" min="1" max="120"><br><br>
+
+      <span>Gender:</span><br>
+      <input type="radio" id="male" name="gender" value="male">
+      <label for="male">Male</label><br>
+      <input type="radio" id="female" name="gender" value="female">
+      <label for="female">Female</label><br><br>
+
+      <label for="profile-photo">Profile Photo:</label>
+      <input type="file" id="profile-photo" name="profile-photo" accept="image/*">
+    </fieldset>
+
+    <!-- Contact & Address Information -->
+    <fieldset>
+      <legend>Contact & Address Information</legend>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone"><br><br>
+
+      <label for="website">Personal Website:</label>
+      <input type="url" id="website" name="website" placeholder="https://example.com"><br><br>
+
+      <label for="street">Street Address:</label>
+      <input type="text" id="street" name="street"><br><br>
+
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city"><br><br>
+
+      <label for="country">Country:</label>
+      <select id="country" name="country">
+        <option value="">Select Country</option>
+        <option value="ke">Kenya</option>
+        <option value="us">United States</option>
+        <option value="uk">United Kingdom</option>
+        <!-- Add more options as needed -->
+      </select><br><br>
+
+      <label for="zip">ZIP/Postal Code:</label>
+      <input type="text" id="zip" name="zip"><br><br>
+
+      <label for="preferred-time">Preferred Contact Time:</label>
+      <input type="time" id="preferred-time" name="preferred-time">
+    </fieldset>
+
+    <!-- Preferences & Interests -->
+    <fieldset>
+      <legend>Preferences & Interests</legend>
+
+      <label for="color">Favorite Color:</label>
+      <input type="color" id="color" name="color"><br><br>
+
+      <label for="experience">Experience Level (1-10):</label>
+      <input type="range" id="experience" name="experience" min="1" max="10"><br><br>
+
+      <label for="birth-month">Birth Month:</label>
+      <input type="month" id="birth-month" name="birth-month"><br><br>
+
+      <label for="available-week">Available Week:</label>
+      <input type="week" id="available-week" name="available-week"><br><br>
+
+      <label for="keywords">Search Keywords:</label>
+      <input type="search" id="keywords" name="keywords" placeholder="Enter keywords..."><br><br>
+
+      <span>Interests (Select all that apply):</span><br>
+      <input type="checkbox" id="tech" name="interests" value="technology">
+      <label for="tech">Technology</label><br>
+      <input type="checkbox" id="sports" name="interests" value="sports">
+      <label for="sports">Sports</label><br>
+      <input type="checkbox" id="music" name="interests" value="music">
+      <label for="music">Music</label><br>
+      <input type="checkbox" id="travel" name="interests" value="travel">
+      <label for="travel">Travel</label><br>
+      <input type="checkbox" id="reading" name="interests" value="reading">
+      <label for="reading">Reading</label><br>
+      <input type="checkbox" id="cooking" name="interests" value="cooking">
+      <label for="cooking">Cooking</label><br><br>
+
+      <label for="education">Education Level:</label>
+      <select id="education" name="education">
+        <option value="">Select Education Level</option>
+        <option value="highschool">High School</option>
+        <option value="diploma">Diploma</option>
+        <option value="bachelor">Bachelor's</option>
+        <option value="master">Master's</option>
+        <option value="phd">PhD</option>
+      </select><br><br>
+
+      <label for="password">Create Password:</label>
+      <input type="password" id="password" name="password" required><br><br>
+
+      <label for="confirm-password">Confirm Password:</label>
+      <input type="password" id="confirm-password" name="confirm-password" required>
+    </fieldset>
+
+    <!-- Feedback & Additional Information -->
+    <fieldset>
+      <legend>Feedback & Additional Information</legend>
+
+      <label for="about">Tell us about yourself:</label><br>
+      <textarea id="about" name="about" rows="4" cols="40" placeholder="Write a brief description about yourself..."></textarea><br><br>
+
+      <label for="suggestions">Suggestions for improvement:</label><br>
+      <textarea id="suggestions" name="suggestions" rows="4" cols="40" placeholder="Any suggestions or feedback..."></textarea><br><br>
+
+      <label for="registration-date">Registration Date & Time:</label>
+      <input type="datetime-local" id="registration-date" name="registration-date"><br><br>
+
+      <label for="source">How did you hear about us?</label>
+      <select id="source" name="source">
+        <option value="">Select Source</option>
+        <option value="friend">Friend</option>
+        <option value="ad">Advertisement</option>
+        <option value="social">Social Media</option>
+        <option value="search">Search Engine</option>
+      </select><br><br>
+
+      <label for="resume">Upload Resume (optional):</label>
+      <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx"><br><br>
+
+      <input type="checkbox" id="newsletter" name="newsletter">
+      <label for="newsletter">Subscribe to our newsletter</label><br>
+
+      <input type="checkbox" id="terms" name="terms" required>
+      <label for="terms">I agree to the Terms and Conditions</label><br>
+
+      <input type="checkbox" id="privacy" name="privacy" required>
+      <label for="privacy">I agree to the Privacy Policy</label>
+    </fieldset>
+
+    <!-- Form Actions -->
+    <button type="submit">Register</button>
+    <button type="reset">Clear Form</button>
+  </form>
+</body>
+</html>

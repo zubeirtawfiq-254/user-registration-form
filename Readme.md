@@ -14,10 +14,15 @@ The form is designed to:
 ## 📂 File Structure
 ```
 user-registration-form/
-├── index.html    # Main HTML form with semantic structure
-├── styles.css    # Complete CSS styling with modern design
-└── README.md     # Project documentation
-```
+├── index.html          # Main HTML form
+├── styles.css          # Complete CSS styling
+├── README.md           # Project documentation
+└── screenshots/        # Contains all form screenshots
+    ├── full-form.png
+    ├── hover-state.png
+    ├── focus-state.png
+    └── mobile-view.png
+
 
 ## 🎨 Styling Approach
 
@@ -231,16 +236,6 @@ Hover and focus effects were added to improve user interaction and feedback.
 
 ### 📱 Responsive / Mobile View
 ![Mobile View](screenshots/mobile-view.png)
-
-
-
-## 🌐 Browser Compatibility
-Tested and works smoothly on:
-- Google Chrome (latest)
-- Microsoft Edge
-- Mozilla Firefox
-- Safari (basic compatibility)
-
 
 ## 🧩 Notes
 This project demonstrates structured CSS organization using **comments**, **variables**, and **media queries** for a professional and clean design layout.

@@ -1,272 +1,111 @@
 /* ===============================
-   CSS Variables (Color Palette)
+   Root Variables & General Styles
 ================================= */
 :root {
   --primary-blue: #2563eb;
-  --primary-dark: #1e40af;
-  --primary-light: #3b82f6;
-
-  --neutral-bg: #f9fafb;
-  --white: #ffffff;
-  --text-dark: #1f2937;
-  --text-light: #6b7280;
-  --border: #d1d5db;
-  --border-focus: #2563eb;
-
-  --success: #10b981;
-  --error: #ef4444;
-  --warning: #f59e0b;
-
   --accent-purple: #8b5cf6;
   --accent-pink: #ec4899;
+  --accent-red: #dc2626;
+  --light-gray: #f9fafb;
+  --medium-gray: #e5e7eb;
+  --dark-gray: #374151;
+  --white: #ffffff;
+  --transition: all 0.3s ease;
 }
 
-/* ===============================
-   Global Reset / Typography
-================================= */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--neutral-bg);
-  color: var(--text-dark);
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--light-gray);
+  margin: 0;
+  padding: 0;
+  color: var(--dark-gray);
   line-height: 1.6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 20px 0;
 }
 
 /* ===============================
    Form Container
 ================================= */
 form {
+  max-width: 900px;
+  margin: 2rem auto;
   background-color: var(--white);
-  max-width: 600px;
-  width: 100%;
-  padding: 2rem;
+  padding: 2rem 2.5rem;
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  margin: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-form h1 {
+h1, h2, h3 {
+  color: var(--primary-blue);
   text-align: center;
-  color: var(--primary-dark);
-  margin-bottom: 1.5rem;
-  font-size: 1.8rem;
-  font-weight: 700;
 }
 
 /* ===============================
-   Form Fields
+   Form Groups
 ================================= */
 label {
   display: block;
-  margin-bottom: 0.5rem;
   font-weight: 600;
-  color: var(--text-dark);
-  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: var(--dark-gray);
 }
 
-/* Style span elements (like Gender label) same as labels */
-span {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-  color: var(--text-dark);
-  font-size: 0.95rem;
-}
-
-input, select, textarea {
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="url"],
+input[type="date"],
+input[type="time"],
+input[type="week"],
+select,
+textarea {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 1.2rem;
-  border: 1px solid var(--border);
+  padding: 10px 12px;
+  border: 1px solid var(--medium-gray);
   border-radius: 6px;
   font-size: 1rem;
-  background-color: var(--neutral-bg);
-  transition: all 0.3s ease;
-  font-family: inherit;
-  min-height: 44px; /* Touch-friendly minimum height */
+  transition: var(--transition);
 }
 
-/* Hover states for inputs */
-input:hover, select:hover, textarea:hover {
-  border-color: var(--text-light);
-}
-
-/* Focus states for inputs */
-input:focus, select:focus, textarea:focus {
-  border-color: var(--border-focus);
+input:focus,
+select:focus,
+textarea:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-  background-color: var(--white);
-}
-
-/* Placeholder styling */
-::placeholder {
-  color: var(--text-light);
-  opacity: 0.8;
-}
-
-/* ===============================
-   Textarea Specific Styling
-================================= */
-textarea {
-  resize: vertical;
-  min-height: 100px;
-  line-height: 1.5;
-  padding: 12px;
-}
-
-/* ===============================
-   Fieldset & Legend
-================================= */
-fieldset {
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  background-color: var(--white);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
-
-legend {
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--primary-dark);
-  padding: 0 10px;
-  background-color: var(--white);
-}
-
-/* ===============================
-   Radio & Checkbox
-================================= */
-input[type="radio"],
-input[type="checkbox"] {
-  width: auto;
-  margin-right: 8px;
-  margin-bottom: 0;
-  min-height: auto;
-  cursor: pointer;
-  accent-color: var(--primary-blue);
-}
-
-.radio-group, .checkbox-group {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.8rem;
-}
-
-/* Labels inside radio/checkbox groups should be inline */
-.radio-group label, 
-.checkbox-group label {
-  display: inline;
-  margin-bottom: 0;
-  font-weight: normal;
-  cursor: pointer;
-  user-select: none;
-}
-
-/* Hover effect for radio/checkbox groups */
-.radio-group:hover, 
-.checkbox-group:hover {
-  opacity: 0.8;
-}
-
-/* ===============================
-   File Upload Styling
-================================= */
-input[type="file"] {
-  border: 1px dashed var(--border);
-  background-color: var(--neutral-bg);
-  padding: 10px;
-  cursor: pointer;
-}
-
-input[type="file"]:hover {
   border-color: var(--primary-blue);
-  background-color: rgba(37, 99, 235, 0.05);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
 
 /* ===============================
-   Range Slider Styling
+   Checkbox and Radio Styles
 ================================= */
-input[type="range"] {
-  width: 100%;
-  margin: 10px 0;
-  padding: 0;
-  height: 8px;
-  background: transparent;
+input[type="checkbox"],
+input[type="radio"] {
   accent-color: var(--primary-blue);
-  cursor: pointer;
-}
-
-/* Custom range track styling for WebKit browsers */
-input[type="range"]::-webkit-slider-track {
-  width: 100%;
-  height: 8px;
-  background: var(--border);
-  border-radius: 4px;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  background: var(--primary-blue);
-  border-radius: 50%;
-  cursor: pointer;
-  border: 2px solid var(--white);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-input[type="range"]::-webkit-slider-thumb:hover {
-  background: var(--primary-dark);
+  margin-right: 6px;
   transform: scale(1.1);
 }
 
-/* Custom range track styling for Firefox */
-input[type="range"]::-moz-range-track {
-  width: 100%;
-  height: 8px;
-  background: var(--border);
-  border-radius: 4px;
-}
-
-input[type="range"]::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
-  background: var(--primary-blue);
-  border-radius: 50%;
-  cursor: pointer;
-  border: 2px solid var(--white);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-input[type="range"]::-moz-range-thumb:hover {
-  background: var(--primary-dark);
-}
-
 /* ===============================
-   Color Picker Styling
+   Layout Adjustments
 ================================= */
-input[type="color"] {
-  height: 50px;
-  border: 2px solid var(--border);
-  cursor: pointer;
-  padding: 4px;
+.field-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-input[type="color"]:hover {
-  border-color: var(--primary-blue);
+.field-group > div {
+  flex: 1;
+  min-width: 250px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
 }
 
 /* ===============================
@@ -279,7 +118,7 @@ button, input[type="submit"], input[type="reset"] {
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: var(--transition);
   min-height: 44px;
   font-family: inherit;
 }
@@ -291,21 +130,23 @@ button[type="submit"], input[type="submit"] {
   box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
 }
 
+/* 🔥 Hover turns red */
 button[type="submit"]:hover, input[type="submit"]:hover {
-  background-color: var(--primary-dark);
-  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+  background-color: var(--accent-red);
+  color: var(--white);
+  box-shadow: 0 4px 8px rgba(220, 38, 38, 0.3);
   transform: translateY(-1px);
 }
 
 button[type="submit"]:active, input[type="submit"]:active {
-  background-color: var(--primary-dark);
+  background-color: #b91c1c; /* Darker red when clicked */
   transform: translateY(0) scale(0.98);
-  box-shadow: 0 1px 2px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 1px 2px rgba(220, 38, 38, 0.2);
 }
 
 button[type="submit"]:focus, input[type="submit"]:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.3);
 }
 
 /* Reset Button Styling */
@@ -322,132 +163,30 @@ button[type="reset"]:hover, input[type="reset"]:hover {
   transform: translateY(-1px);
 }
 
-button[type="reset"]:active, input[type="reset"]:active {
-  background-color: var(--accent-purple);
-  transform: translateY(0) scale(0.98);
-  box-shadow: 0 1px 2px rgba(139, 92, 246, 0.2);
-}
-
-button[type="reset"]:focus, input[type="reset"]:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.3);
-}
-
 /* ===============================
-   Disabled States (Optional)
+   Feedback & Additional Info
 ================================= */
-input:disabled, 
-select:disabled, 
-textarea:disabled, 
-button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  background-color: #e5e7eb;
-}
-
-button:disabled:hover {
-  transform: none;
-  box-shadow: none;
-}
-
-/* ===============================
-   Success / Error / Warning Classes
-================================= */
-.success {
-  color: var(--success);
-  font-weight: 600;
-}
-
-.error {
-  color: var(--error);
-  font-weight: 600;
-}
-
-.warning {
-  color: var(--warning);
-  font-weight: 600;
-}
-
-/* ===============================
-   Form Button Container
-================================= */
-form > button:first-of-type {
-  margin-left: 0;
+.feedback {
+  background-color: var(--medium-gray);
+  padding: 1rem;
+  border-radius: 6px;
+  margin-top: 1rem;
 }
 
 /* ===============================
    Responsive Design
 ================================= */
 @media (max-width: 600px) {
-  body {
-    padding: 10px 0;
-  }
-
   form {
     padding: 1.5rem;
-    margin: 10px;
   }
 
-  form h1 {
-    font-size: 1.5rem;
-  }
-
-  input, select, textarea {
-    font-size: 16px; /* Prevents zoom on iOS */
-    padding: 10px;
+  .field-group {
+    flex-direction: column;
   }
 
   button, input[type="submit"], input[type="reset"] {
     width: 100%;
-    margin-left: 0 !important;
-    margin-bottom: 10px;
-  }
-
-  fieldset {
-    padding: 1rem;
-  }
-
-  legend {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 400px) {
-  form {
-    padding: 1rem;
-  }
-
-  input, select, textarea {
-    padding: 8px;
-  }
-}
-
-/* ===============================
-   Enhanced Accessibility
-================================= */
-/* Ensure focus is visible for keyboard navigation */
-*:focus-visible {
-  outline: 2px solid var(--primary-blue);
-  outline-offset: 2px;
-}
-
-/* Smooth scrolling for better UX */
-html {
-  scroll-behavior: smooth;
-}
-
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-  input, select, textarea {
-    border-width: 2px;
-  }
-}
-
-/* Reduced motion for accessibility */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    margin-top: 10px;
   }
 }
